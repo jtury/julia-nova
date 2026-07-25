@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syntax name="julia">
+	<meta>
+		<name>Julia</name>
+		<type>script</type>
+		<preferred-file-extension>jl</preferred-file-extension>
+		<scriptable shebang="#!/usr/bin/env julia" />
+	</meta>
+	<detectors>
+		<extension priority="1.0">jl</extension>
+	</detectors>
+	<indentation>
+	<!-- TODO -->
+	</indentation>
+	<comments>
+		<single>
+			<expression>#</expression>
+		</single>
+		<multiline>
+			<starts-with>
+				<expression>#=</expression>
+			</starts-with>
+			<ends-with>
+				<expression>=#</expression>
+			</ends-with>
+		</multiline>
+	</comments>
+	
+	<!-- TODO: see what types of languages can be injected -->
+	<injection>
+		<expression>(html|HTML|Html)$</expression>
+		<expression>(md)$</expression>
+	</injection>
+	
+	<tree-sitter language="julia">
+		<highlights />
+		<folds />
+		<injections />
+	</tree-sitter>
+</syntax>

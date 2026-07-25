@@ -1,0 +1,151 @@
+{
+    "identifier": "com.jtury.julia-lsp",
+    "name": "Julia",
+    "organization": "James Tury",
+    "description": "LanguageServer.jl integration in Nova",
+    "version": "1.0.0",
+    "categories": ["languages"],
+    "main": "main.js",
+    "activationEvents": [
+        "onLanguage:julia"
+    ],
+    "capabilities": {
+        "format": true
+    },
+    "entitlements": {
+        "process": true
+    },
+    "commands": {
+        "editor": [
+            {
+                "title": "Restart Julia Language Server",
+                "command": "julia-lsp.restart"
+            }
+        ]
+    },
+    "taskTemplates": [
+        {
+            "identifier": "julia-run",
+            "name": "Run Julia Script",
+            "description": "Executes the active Julia file.",
+            "type": "run",
+            "resolveAssistant": "julia-tasks"
+        }
+    ],
+"config": [
+        {
+            "key": "julia.executablePath",
+            "title": "Julia Executable Path",
+            "description": "The absolute path to the julia binary.",
+            "type": "path",
+            "default": "~/.juliaup/bin/julia"
+        },
+        {
+            "key": "julia.lint.missingrefs",
+            "title": "Lint Missing References",
+            "description": "Show diagnostics for missing package references.",
+            "type": "string",
+            "enum": ["all", "none"],
+            "default": "all"
+        },
+        {
+            "key": "julia.inlayHints.static.enabled",
+            "title": "Enable Inlay Hints",
+            "type": "boolean",
+            "default": true
+        },
+        {
+            "key": "julia.inlayHints.static.variableTypes.enabled",
+            "title": "Show Variable Types",
+            "type": "boolean",
+            "default": true
+        },
+        {
+            "key": "julia.inlayHints.static.parameterNames.enabled",
+            "title": "Show Parameter Names",
+            "type": "boolean",
+            "default": true
+        },
+        {
+            "key": "julia.lint.call",
+            "title": "Lint: Call",
+            "type": "boolean",
+            "default": true
+        },
+        {
+            "key": "julia.lint.iter",
+            "title": "Lint: Iteration",
+            "type": "boolean",
+            "default": true
+        },
+        {
+            "key": "julia.lint.nothingcomp",
+            "title": "Lint: Nothing Comparison",
+            "type": "boolean",
+            "default": true
+        },
+        {
+            "key": "julia.lint.constif",
+            "title": "Lint: Constant If",
+            "type": "boolean",
+            "default": true
+        },
+        {
+            "key": "julia.lint.lazy",
+            "title": "Lint: Lazy",
+            "type": "boolean",
+            "default": true
+        },
+        {
+            "key": "julia.lint.datadecl",
+            "title": "Lint: Data Declaration",
+            "type": "boolean",
+            "default": true
+        },
+        {
+            "key": "julia.lint.typeparam",
+            "title": "Lint: Type Parameter",
+            "type": "boolean",
+            "default": true
+        },
+        {
+            "key": "julia.lint.modname",
+            "title": "Lint: Module Name",
+            "type": "boolean",
+            "default": true
+        },
+        {
+            "key": "julia.lint.pirates",
+            "title": "Lint: Type Piracy",
+            "type": "boolean",
+            "default": true
+        },
+        {
+            "key": "julia.lint.useoffuncargs",
+            "title": "Lint: Use of Function Args",
+            "type": "boolean",
+            "default": true
+        },
+        {
+            "key": "julia.lint.run",
+            "title": "Lint: Run",
+            "type": "boolean",
+            "default": true
+        },
+        {
+            "key": "julia.lint.disabledDirs",
+            "title": "Disabled Linting Directories",
+            "description": "Directories to exclude from the linter.",
+            "type": "stringArray",
+            "default": ["test", "docs"]
+        },
+        {
+            "key": "julia.completionmode",
+            "title": "Completion Mode",
+            "description": "Whether to auto-qualify module names in completions.",
+            "type": "string",
+            "enum": ["qualify", "unqualify"],
+            "default": "qualify"
+        }
+    ]
+}

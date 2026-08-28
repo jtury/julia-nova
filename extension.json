@@ -3,7 +3,7 @@
     "name": "Julia",
     "organization": "James Tury",
     "description": "LanguageServer.jl integration in Nova",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "categories": ["languages"],
     "main": "main.js",
     "activationEvents": [

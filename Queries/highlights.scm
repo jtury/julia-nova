@@ -1,4 +1,6 @@
 ; Generated with Anthropic's Claude Language Model
+; This should be double checked sometime soon; I haven't personally verified.
+; (it seems to work OK haha)
 
 ; Identifiers
 (identifier) @identifier
